@@ -1,6 +1,6 @@
 # 재생성·검증
 
-명령은 프로젝트 루트인 `workspace/keycult-trackball/`에서 실행한다. 모든 스크립트는 자신의 파일 위치를 기준으로 경로를 찾으며 개인 작업공간 절대 경로를 요구하지 않는다.
+명령은 독립 `keycult-trackball` 저장소 루트에서 실행한다. 모든 스크립트는 자신의 파일 위치를 기준으로 경로를 찾으며 개인 작업공간 절대 경로를 요구하지 않는다. 생성 보고서에 남은 과거 절대 경로는 출처 기록이며 현재 실행 위치를 지정하지 않는다.
 
 ## 1. 좌표·벡터·HTML
 
@@ -83,7 +83,7 @@ uv run --python /Applications/FreeCAD.app/Contents/Resources/bin/python scripts/
 uv run --python /Applications/FreeCAD.app/Contents/Resources/bin/python scripts/build_plate.py
 ```
 
-설치 위치가 다르면 `FREECAD_ROOT`를 `Contents/Resources` 경로로 지정하고 `--python`도 해당 앱의 Python으로 바꾼다. Linux에서는 상위 저장소의 고정된 `config` flake 입력으로 준비한 FreeCAD 1.1.4와 Python 3.14.7의 모듈 로드를 확인했다. `FreeCAD`와 `Part`가 해당 Python에서 import되는 환경을 사용한다. 생성된 FCStd는 FreeCAD 앱에서 열고 객체의 표시 여부, 색상과 투명도를 직접 조정한다. PNG가 필요하면 GUI에서 저장한다. 외부 Python에서 `FreeCADGui.showMainWindow()`를 호출하는 방식은 이 Mac에서 종료 시 비정상 종료가 발생하여 사용하지 않는다.
+설치 위치가 다르면 `FREECAD_ROOT`를 `Contents/Resources` 경로로 지정하고 `--python`도 해당 앱의 Python으로 바꾼다. Linux의 과거 검증 환경은 당시 설정 저장소의 고정된 `config` flake 입력으로 준비한 FreeCAD 1.1.4와 Python 3.14.7이었다. 이 독립 저장소에는 해당 flake가 없으며, `FreeCAD`와 `Part`가 해당 Python에서 import되는 환경을 별도로 준비한다. 생성된 FCStd는 FreeCAD 앱에서 열고 객체의 표시 여부, 색상과 투명도를 직접 조정한다. PNG가 필요하면 GUI에서 저장한다. 외부 Python에서 `FreeCADGui.showMainWindow()`를 호출하는 방식은 이 Mac에서 종료 시 비정상 종료가 발생하여 사용하지 않는다.
 
 현재 `scripts/build_plate.py`는 `design/preliminary/sources/local/prototype-62/`에 얕은 62키 시제품만 생성한다. 먼저 현재 PCB 검증과 `scripts/build_printable_holder.py`를 실행해야 한다. 아래에서 설명하는 `plate-study/65/`, `plate-study/62/`와 `review.json`은 과거 깊은 구조의 검토 기록이며 기본 명령으로 다시 만들지 않는다. 해당 CAD를 현재 출력 홀더와 혼용하지 않는다.
 

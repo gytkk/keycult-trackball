@@ -238,7 +238,7 @@ kicad-cli pcb export step --force --component-filter U1,U2,U3,J1,J2,Y1 \
   design/pcb/62/keycult62.kicad_pcb
 ```
 
-Run these commands from the project root, `workspace/keycult-trackball/`, with the Python version matching KiCad's installed binding (the original Nix runtime uses Python 3.14; the official 10.0.7 Docker image uses Python 3.13). Scripts require Python 3.11 or newer, but `pcbnew` must match the chosen interpreter. Use the [Docker procedure](../../docs/reproduction.md#docker에서-kicad-검증) when KiCad is not installed on the host.
+Run these commands from the root of this standalone `keycult-trackball` repository, with the Python version matching KiCad's installed binding (the original Nix runtime uses Python 3.14; the official 10.0.7 Docker image uses Python 3.13). Scripts require Python 3.11 or newer, but `pcbnew` must match the chosen interpreter. Use the [Docker procedure](../../docs/reproduction.md#docker에서-kicad-검증) when KiCad is not installed on the host. Historical absolute paths in generated reports document their original execution environment; they are not required checkout paths.
 
 ```bash
 uv run --python "$(command -v python3)" scripts/build_pcb.py --keys 65

@@ -1,6 +1,6 @@
 # 작업 지침
 
-이 지침은 `workspace/keycult-trackball/` 프로젝트에 적용하며 저장소 루트의 `AGENTS.md`도 함께 따른다. 이 문서의 파일 경로와 명령 실행 위치는 별도 표시가 없으면 프로젝트 루트를 기준으로 한다.
+이 지침은 독립 `keycult-trackball` 저장소 전체에 적용한다. 이 문서의 파일 경로와 명령 실행 위치는 별도 표시가 없으면 이 파일이 있는 저장소 루트를 기준으로 한다.
 
 ## 작업 맥락
 
@@ -22,7 +22,7 @@
 
 ## 검증
 
-Python 명령은 프로젝트 루트인 `workspace/keycult-trackball/`에서 `uv run`으로 실행한다. 의존성은 각 스크립트의 메타데이터를 따른다. 상세 절차와 환경 조건은 [재현 문서](docs/reproduction.md)를 참조한다.
+Python 명령은 이 저장소 루트에서 `uv run`으로 실행한다. 의존성은 각 스크립트의 메타데이터를 따른다. 상세 절차와 환경 조건은 [재현 문서](docs/reproduction.md)를 참조한다.
 
 - 문서만 변경한 경우 `uv run scripts/validate.py`로 로컬 링크와 기존 산출물을 검사한다.
 - 배열이나 도면을 변경한 경우 `uv run design/preliminary/build_artifacts.py`, `uv run scripts/render.py`, `uv run scripts/validate.py` 순서로 실행한다. 렌더에는 시스템 Chromium이 필요하며 `KEYCULT_CHROMIUM`으로 실행 파일을 지정할 수 있다.
@@ -39,6 +39,6 @@ Python 명령은 프로젝트 루트인 `workspace/keycult-trackball/`에서 `uv
 
 ## 커밋과 푸시
 
-- 사용자가 별도로 지시하지 않는 한, 작업을 완료하고 검증한 뒤 해당 작업의 변경 사항만 상위 저장소에 커밋한다. 푸시는 사용자가 명시적으로 요청한 경우에만 실행한다.
+- 커밋과 푸시는 사용자가 요청한 범위에서 이 저장소에만 수행한다.
 - 기존 사용자 변경은 보존하고, 커밋할 파일을 명시적으로 선택한다. 커밋 메시지는 기존 Conventional Commit 형식을 따른다.
 - 커밋 결과를 확인한 뒤 작업 완료를 보고한다. 푸시를 요청받은 경우에는 푸시 결과도 확인하며, 커밋이나 요청받은 푸시에 실패하면 원인과 남은 작업을 보고한다.
